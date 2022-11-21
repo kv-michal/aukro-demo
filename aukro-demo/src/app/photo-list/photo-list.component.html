@@ -1,0 +1,13 @@
+<div class="photos" [class.photos--gray-filter]="grayscaleFilter">
+  <div *ngFor="let photo of photos" class="photo">
+    <div class="photo__desc">
+      <div class="photo__title">
+        {{photo.name}}
+      </div>
+      <div class="photo__link">
+        {{photo.images.lists.original[0].url}}
+      </div>
+    </div>
+    <img [src]="photo.images.lists.original[0].url" class="photo__image" alt="photo"/>
+  </div>
+</div>

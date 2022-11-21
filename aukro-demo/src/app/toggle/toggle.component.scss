@@ -1,0 +1,49 @@
+@use '../../theme' as theme;
+
+$toggle-background-color: #666666;
+$toggle-background-color--active: theme.$primary-color;
+$circle-background-color: theme.$text-color--light;
+
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 22px;
+  margin-right: 1rem;
+  background: $toggle-background-color;
+  border-radius: 14px;
+
+  &:hover {
+    opacity: .8;
+    cursor: pointer;
+  }
+
+  &--active {
+    background: $toggle-background-color--active;
+
+    .toggle__circle {
+      left: calc(100% - 22px);
+    }
+  }
+
+  &__circle {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin: 3px;
+    background: $circle-background-color;
+    border-radius: 50%;
+    left: 0;
+    transition: left .2s linear;
+  }
+}
+
+.label {
+  font-size: 18px;
+}

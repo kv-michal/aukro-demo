@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Photo Fetcher</h1>
+  <div class="controls">
+    <app-toggle [(active)]="grayscaleFilter"></app-toggle>
+    <button (click)="getPhotos()" class="button-fetch" type="button">
+      Fetch New Photos
+    </button>
+  </div>
+  <app-photo-list [photos]="photos" [grayscaleFilter]="grayscaleFilter"></app-photo-list>
+</div>

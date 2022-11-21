@@ -1,0 +1,28 @@
+@use '../theme' as theme;
+
+$button-color: theme.$text-color--light;
+$button-background-color: theme.$primary-color;
+
+.container {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.button-fetch {
+  height: 30px;
+  padding: .5rem;
+  border: none;
+  color: $button-color;
+  background: $button-background-color;
+  cursor: pointer;
+
+  &:hover {
+    opacity: .8;
+  }
+}

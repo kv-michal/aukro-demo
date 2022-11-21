@@ -1,0 +1,57 @@
+@use '../../theme' as theme;
+
+$text-color: theme.$text-color--light;
+$desc-background-color: rgba(0, 0, 0, 0.7);
+
+.photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  grid-gap: 16px;
+  width: 100%;
+
+  &--gray-filter .photo__image {
+    filter: grayscale(1);
+  }
+}
+
+.photo {
+  position: relative;
+  color: $text-color;
+
+  &__image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__desc {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-sizing: border-box;
+    background: $desc-background-color;
+    z-index: 2;
+  }
+
+  &__title {
+    font-size: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-bottom: .5rem;
+  }
+
+  &__link {
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: .7;
+  }
+}
